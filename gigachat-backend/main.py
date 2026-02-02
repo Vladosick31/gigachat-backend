@@ -1,5 +1,4 @@
-# main.py
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI
 from pydantic import BaseModel
 from gigachat import GigaChat
 from gigachat.models import Chat, Messages
@@ -45,7 +44,7 @@ async def chat_endpoint(req: MessageRequest):
     # Получаем историю
     history = user_history.get(user_id, [])
     history.append(Messages(role="user", content=user_msg))
-    history = history[-10:]  # ограничиваем
+    history = history[-10:]
 
     # Добавляем system prompt
     if not any(m.role == "system" for m in history):
