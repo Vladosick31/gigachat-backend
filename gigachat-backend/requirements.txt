@@ -1,0 +1,5 @@
+fastapi==0.115.0
+uvicorn==0.32.0
+gigachat==0.2.0
+python-dotenv
+pydantic==2.8.0
